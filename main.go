@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/bytedance/sonic"
+	"github.com/charmbracelet/log"
 )
 
 func main() {
@@ -27,5 +28,6 @@ func main() {
 		sonic.ConfigFastest.NewEncoder(w).Encode(resp)
 	})
 
+	log.Info("Running")
 	http.ListenAndServe(":3000", mux)
 }
